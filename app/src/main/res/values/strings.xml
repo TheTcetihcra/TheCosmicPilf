@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">CosmicPilf</string>
-    <string name="phase_one_prompt">Is the truth beginning to lie again..? Are the lies becoming the truth?</string>
+    <string name="app_name">The Cosmic Pilf</string>
+
+    <!-- Phase 1 prompt -->
+    <string name="phase_one_prompt">
+        Is the truth beginning to lie again..? Are the lies becoming the truth?
+    </string>
 </resources>
