@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/moria_closed_wall"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The Cosmic Pilf"
-        android:textSize="28sp"
-        android:textColor="#E6D4AA"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:typeface="serif" />
-
-    <Button
-        android:id="@+id/lore_bank_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="📜 Lore Bank"
-        android:textSize="18sp"
-        android:layout_below="@id/app_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#6C4B3B"
-        android:textColor="#FFF5D0"
-        android:elevation="4dp" />
+    <ImageView
+        android:id="@+id/phaseOneImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cosmic_closed_door" />
 
 </RelativeLayout>
