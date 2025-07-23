@@ -3,11 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/phaseOneImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/cosmic_closed_door" />
+
+    <!-- Phase One Input UI (on top of image) -->
+    <LinearLayout
+        android:id="@+id/phaseOneContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_centerInParent="true"
+        android:background="#AA000000"> <!-- semi-transparent black -->
+
+        <TextView
+            android:id="@+id/phase_one_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter what remains..."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/phase_one_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your input here"
+            android:textColor="#FFFFFF"
+            android:background="#33000000"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="text" />
+    </LinearLayout>
 
 </RelativeLayout>
