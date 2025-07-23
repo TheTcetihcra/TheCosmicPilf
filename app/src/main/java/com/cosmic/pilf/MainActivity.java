@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.inputmethod.InputMethodManager;
 import android.view.View;
 import android.content.Context;
+import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         startPhaseOneTimer();
     }
 
@@ -31,14 +31,19 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
             .setTitle("Phase 1")
             .setMessage(getString(R.string.phase_one_prompt))
-            .setPositiveButton("Continue", null)
+            .setPositiveButton("Continue", (dialog, which) -> {
+                // Unlock the input field
+                EditText inputField = findViewById(R.id.phase_one_input);
+                inputField.setEnabled(true);
+                inputField.setFocusable(true);
+                inputField.setFocusableInTouchMode(true);
+                inputField.requestFocus();
+
+                // Show the keyboard
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(inputField, InputMethodManager.SHOW_IMPLICIT);
+            })
             .setCancelable(false)
             .show();
-
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
-        }
     }
 }
