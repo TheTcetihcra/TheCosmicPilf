@@ -2,11 +2,10 @@ package com.cosmic.pilf;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toast;
 import android.view.inputmethod.InputMethodManager;
 import android.view.View;
 import android.content.Context;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPhaseOnePrompt() {
-        Toast.makeText(this,
-            "Are the lies truth yet? Are the truths becoming liars?",
-            Toast.LENGTH_LONG).show();
+        new AlertDialog.Builder(this)
+            .setTitle("Phase 1")
+            .setMessage(getString(R.string.phase_one_prompt))
+            .setPositiveButton("Continue", null)
+            .setCancelable(false)
+            .show();
 
         View view = this.getCurrentFocus();
         if (view != null) {
